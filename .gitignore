@@ -1,0 +1,36 @@
+# Ignore system and temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Ignore Python-specific files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore logs and runtime data
+*.log
+*.log.*
+*.pid
+*.db
+
+# Ignore user-specific files
+config.yaml
+secrets.ini
+
+# Ignore package manager directories
+node_modules/
+bower_components/
+
+# Ignore compiled binaries
+*.exe
+*.out
+
+# Ignore IDE and editor-specific files
+.idea/
+.vscode/
