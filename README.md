@@ -2,7 +2,7 @@
 
 ## Description
 This Python script processes videos from the **RHM (Robot House Multiview)** dataset. It extracts specific frames and applies manual feature extraction, saving them in designated folders. This aids in training deep learning models for human activity recognition.
-
+![RHM Dataset](RHM_sample_all.png)
 ## Features
 - Frame extraction from **RHM** dataset videos.
 - Various feature extractions like:
@@ -69,9 +69,6 @@ year={2023},
 organization={IARIA}
 }
 ```
-
-## RHM Dataset picture
-![RHM Dataset](RHM_sample_all.png)
 
 ## RHM Data Structure
 
