@@ -40,7 +40,7 @@ Adjust these settings based on the required features for your application.
     ```
 
 
-### Executing the Program
+### Usage
 - Clone or download the script.
 - Set `RHMPath` in the script to your RHM dataset's location.
 - Run the script:
