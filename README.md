@@ -49,10 +49,10 @@ Adjust these settings based on the required features for your application.
     python main.py
     ```
 
-## Help
+## RHM Help
 For assistance with obtaining the **RHM** dataset, send an email to Patrick at [p.holthaus@herts.ac.uk](mailto:p.holthaus@herts.ac.uk). More information about the Robot House, where the dataset was collected, can be found at [Robot House Website](https://robothouse.herts.ac.uk/).
 
-## Citation
+## RHM Citation
 If you are using the **RHM** dataset or this code in your research, please cite the following paper:
 
 Bamorovat Abadi, M., Shahabian Alashti, M. R., Holthaus, P., Menon, C., & Amirabdollahian, F. (2023). RHM: Robot House Multi-View Human Activity Recognition Dataset. In ACHI 2023: The Sixteenth International Conference on Advances in Computer-Human Interactions. IARIA.
@@ -69,6 +69,9 @@ year={2023},
 organization={IARIA}
 }
 ```
+
+## RHM Dataset pictures
+![RHM Dataset](RHM_sample_all.png)
 
 ## RHM Data Structure
 
