@@ -6,13 +6,13 @@ This Python script processes videos from the **RHM (Robot House Multiview)** dat
 ## Features
 - Frame extraction from **RHM** dataset videos.
 - Various feature extractions like:
-  - Motion Aggregation
-  - Frame Variation Mapping
-  - Differential Motion Trajectory
+  - Motion Aggregation (MAg)
+  - Frame Variation Mapping (FVM)
+  - Differential Motion Trajectory (DMT)
   - Normal Frame Extraction
   - Subtract Frame Method
   - Optical Flow
-  - Motion History Images
+  - Motion History Images (MHI)
 - Configurable frame extraction count and debug options.
 - Automated folder creation for frame storage.
 
