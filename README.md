@@ -70,7 +70,7 @@ organization={IARIA}
 }
 ```
 
-## RHM Dataset pictures
+## RHM Dataset picture
 ![RHM Dataset](RHM_sample_all.png)
 
 ## RHM Data Structure
