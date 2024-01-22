@@ -509,6 +509,7 @@ def get_frame(video_path, split, view, action_class, video_name):
 
 # Main function
 def main():
+    print('Starting the process...')
     # ViewPoints = FrontView, BackView, OmniView, RobotView
     ViewPoints = os.listdir(RHMPath)
     ViewList = [view for view in ViewPoints if view != "RHHAR"]
@@ -525,6 +526,8 @@ def main():
         parts = folder.split('_')
         # Get the second part
         view = parts[1]
+
+        print(f'Processing the {view}...')
         if Debug:
             print("view Name: ", view)
 
@@ -549,12 +552,18 @@ def main():
                 print("List: ", split)
             ActionPath = os.path.join(SplitPath, split)
             ActionList = os.listdir(ActionPath)
+
+            print(f'Processing the {split}...')
+
             if Debug:
                 print("ActionList: ", ActionList)
 
             for action in ActionList:
                 if Debug:
                     print("Action: ", action)
+
+                print(f'Processing the {action}...')
+
                 VideosPath = os.path.join(ActionPath, action)
                 VideoList = os.listdir(VideosPath)
                 if Debug:
@@ -564,6 +573,9 @@ def main():
                         print("video: ", video)
                     if not video:
                         continue
+
+                    print(f'Processing the {video}...')
+
                     VideoPath = os.path.join(VideosPath, video)
 
                     if Debug:
