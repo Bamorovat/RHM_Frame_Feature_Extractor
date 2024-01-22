@@ -34,7 +34,7 @@ RHMPath = "/media/abbas/Elements/Dataset/RHM_Full"
 ExtractFrameNumber = 17
 
 # Debug mode: if True, frames will be displayed during processing
-Debug = False
+Debug = True
 Show_Debug = False
 
 # Feature extraction flags. Set to True to extract the feature and False to skip it.
@@ -256,6 +256,8 @@ def get_frame(video_path, split, view, action_class, video_name):
         MHI_DURATION = 50
         DEFAULT_THRESHOLD = 32
 
+    if Debug:
+        print('video_path: ', video_path)
     # Open the video capture
     video_capture = cv2.VideoCapture(video_path)
 
@@ -543,8 +545,8 @@ def main():
             for action in ActionList:
                 if Debug:
                     print("Action: ", action)
-                VideoPath = os.path.join(ActionPath, action)
-                VideoList = os.listdir(VideoPath)
+                VideosPath = os.path.join(ActionPath, action)
+                VideoList = os.listdir(VideosPath)
                 if Debug:
                     print("VideoList: ", VideoList)
                 for video in VideoList:
@@ -552,7 +554,7 @@ def main():
                         print("video: ", video)
                     if not video:
                         continue
-                    VideoPath = os.path.join(VideoPath, video)
+                    VideoPath = os.path.join(VideosPath, video)
 
                     if Debug:
                         print("VideoPath: ", VideoPath)
