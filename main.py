@@ -34,7 +34,7 @@ RHMPath = "/media/abbas/Elements/Dataset/RHM_Full"
 ExtractFrameNumber = 17
 
 # Debug mode: if True, frames will be displayed during processing
-Debug = True
+Debug = False
 Show_Debug = False
 
 # Feature extraction flags. Set to True to extract the feature and False to skip it.
@@ -94,9 +94,11 @@ def folder_check(split, view, action_class, video_name):
     Frame_path = os.path.join(RHMViewPath, "Frames_Features_Extraction")
     if not os.path.exists(Frame_path):
         os.makedirs(Frame_path)
-        print(f"Folder '{Frame_path}' created successfully.")
+        if Debug:
+            print(f"Folder '{Frame_path}' created successfully.")
     else:
-        print(f"Folder '{Frame_path}' already exists.")
+        if Debug:
+            print(f"Folder '{Frame_path}' already exists.")
 
     # Create a list to hold the paths of the features to be extracted
     Paths_list = []
@@ -113,33 +115,41 @@ def folder_check(split, view, action_class, video_name):
         if not os.path.exists(FeaturePath):
             # Create the folder
             os.makedirs(FeaturePath)
-            print(f"Folder '{FeaturePath}' created successfully.")
+            if Debug:
+                print(f"Folder '{FeaturePath}' created successfully.")
         else:
-            print(f"Folder '{FeaturePath}' already exists.")
+            if Debug:
+                print(f"Folder '{FeaturePath}' already exists.")
 
         # Check if the folder already exists
         if not os.path.exists(SplitPath):
             # Create the folder
             os.makedirs(SplitPath)
-            print(f"Folder '{SplitPath}' created successfully.")
+            if Debug:
+                print(f"Folder '{SplitPath}' created successfully.")
         else:
-            print(f"Folder '{SplitPath}' already exists.")
+            if Debug:
+                print(f"Folder '{SplitPath}' already exists.")
 
         # Check if the folder already exists
         if not os.path.exists(ActionPath):
             # Create the folder
             os.makedirs(ActionPath)
-            print(f"Folder '{ActionPath}' created successfully.")
+            if Debug:
+                print(f"Folder '{ActionPath}' created successfully.")
         else:
-            print(f"Folder '{ActionPath}' already exists.")
+            if Debug:
+                print(f"Folder '{ActionPath}' already exists.")
 
         # Check if the folder already exists
         if not os.path.exists(VideoPath):
             # Create the folder
             os.makedirs(VideoPath)
-            print(f"Folder '{VideoPath}' created successfully.")
+            if Debug:
+                print(f"Folder '{VideoPath}' created successfully.")
         else:
-            print(f"Folder '{VideoPath}' already exists.")
+            if Debug:
+                print(f"Folder '{VideoPath}' already exists.")
 
         # Append the path to the list
         if os.path.exists(VideoPath):
