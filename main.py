@@ -35,6 +35,7 @@ ExtractFrameNumber = 17
 
 # Debug mode: if True, frames will be displayed during processing
 Debug = False
+Show_Debug = False
 
 # Feature extraction flags. Set to True to extract the feature and False to skip it.
 MotionAggregation = True
@@ -67,6 +68,10 @@ if MotionHistoryImages:
 if Debug:
     print("FeatureFrameExtractionList: ", FeatureFrameExtractionList)
 
+if Debug:
+    # Check the openCV version
+    print("openCV version: ", cv2.__version__)
+
 
 # Function to create the folder structure for the extracted frames
 def folder_check(split, view, action_class, video_name):
@@ -86,13 +91,20 @@ def folder_check(split, view, action_class, video_name):
     # save addresses
     RHMViewPath = os.path.join(RHMPath, "RHHAR_" + view)
 
+    Frame_path = os.path.join(RHMViewPath, "Frames_Features_Extraction")
+    if not os.path.exists(Frame_path):
+        os.makedirs(Frame_path)
+        print(f"Folder '{Frame_path}' created successfully.")
+    else:
+        print(f"Folder '{Frame_path}' already exists.")
+
     # Create a list to hold the paths of the features to be extracted
     Paths_list = []
 
     # Create the folder structure for the extracted frames
     for feature in FeatureFrameExtractionList:
 
-        FeaturePath = os.path.join(RHMViewPath, "rhhar_" + view + "_" + feature)
+        FeaturePath = os.path.join(Frame_path, "rhhar_" + view + "_" + feature)
         SplitPath = os.path.join(FeaturePath, split)
         ActionPath = os.path.join(SplitPath, action_class)
         VideoPath = os.path.join(ActionPath, action_class + "_" + view + "_" + video_name)
@@ -418,7 +430,7 @@ def get_frame(video_path, split, view, action_class, video_name):
         # name the frame for saving
         frame_filename = f'{frame_count}.jpg'
 
-        if Debug:
+        if Show_Debug:
             # Display the resulting frame
             if FrameVariationMapper:
                 cv2.imshow('FrameVariationMapper', FrameVariationMapperCalculation)
